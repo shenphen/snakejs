@@ -1,0 +1,106 @@
+@keyframes hide {
+   from {opacity: 1; display:block; z-index: 2}
+    to  {opacity: 0; display: none; z-index: 0}
+}
+@keyframes show {
+   from {opacity: 0; display: none;  z-index: 1}
+    to  {opacity: 1; display: block; z-index: 2}
+}
+
+@keyframes slide_up {
+    from {top: 0}
+    to {top: -100%}
+}
+@keyframes slide_down {
+    from {top: -100%}
+    to {top: 0}
+}
+
+a{
+    text-decoration: none;
+}
+#snake-div {
+    position: absolute;
+    left: 35%;
+    top: 25%;
+    overflow: hidden;
+}
+
+#menu {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+    background-image: radial-gradient(ellipse 50% 50%, #1c22ff 0%, #1118b5 25%, rgba(17, 24, 181, 0.89) 75%, darkblue 100%);
+    z-index: 1;
+}
+
+.hidden{
+    animation: hide 0.5s ease-in 1;
+    opacity: 0;
+    display: none;
+    z-index: 0;
+}
+
+.show {
+    animation: show 0.5s ease-in 1;
+    opacity: 1;
+    display: block;
+    z-index: 1;
+}
+
+.settings_off{
+    top: 0;
+    animation: slide_down 0.5s ease-in 1;
+}
+
+.settings_on {
+    top: -100%;
+    animation: slide_up 0.5s ease-in 1;
+}
+
+#menu > button {
+    position: relative;
+    border: dotted;
+    /*width: 12em;*/
+    width: 14em;
+    height: 5em;
+    text-align: center;
+    left: 30%; /* (100% - width) / 2 */
+    left: calc(50% - 7em);
+    background-image: linear-gradient(#fff, #000);
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+
+}
+#menu > button:first-child{
+    margin-top: 12px;
+}
+#menu > button:nth-child(n+1){
+    margin-bottom: 4px;
+}
+
+#settings {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 6em;
+    /*background-color: rgba(174, 3, 0, 0.24);'*/
+    z-index: 0;
+/*radial-gradient(ellipse 50% 50%, #1c22ff 0%, #1118b5 25%, rgba(17, 24, 181, 0.89) 75%, darkblue 100%);*/
+}
+
+.exit {
+    color: black;
+    /*color: rgba(120, 120, 119, 0.89);*/
+    position: absolute;
+    font-size: 1.2em;
+    right: 0.5em;
+    top: 0.5em;
+    margin: 0;
+    padding: 0;
+    text-shadow: rgba(120, 120, 119, 0.89) 0px 0px 1px;
+}

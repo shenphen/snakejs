@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="snake-div" style="background-color: azure">
+    <div id="menu">
+        <button onclick="game.newGame();">New Game</button><br/>
+        <button id="continue-btn" onclick="game.continue();">Continue</button><br/>
+        <button onclick="slideDown();">Settings</button><br/>
+        <button onclick="exit()">Exit</button><br/>
+        <!--<a href="#" class="exit">&#x2715</a>-->
+        <div id="settings">
+            <form>
+                <input type="radio" name="difficulty" value=120 checked> Easy
+                <input type="radio" name="difficulty" value=80> Medium
+                <input type="radio" name="difficulty" value=60> Hard<br>
+
+                Going through walls?<input type="checkbox" name="walls" checked><br>
+                <input type="submit" value="OK" id="save-settings">
+
+
+
+
+            </form>
+
+        </div>
+
+    </div>
+  <!--  <div id="settings">
+        <form>
+            <input type="radio" name="difficulty" value=120 checked> Easy
+            <input type="radio" name="difficulty" value=80> Medium
+            <input type="radio" name="difficulty" value=60> Hard<br>
+
+            Going through walls?<input type="checkbox" name="walls" checked><br>
+            <input type="submit" value="OK" id="save-settings">
+
+
+
+
+        </form>
+
+    </div>-->
+    <!--<img id="snake-grid-norm" src="img/snake_grid_bg.png" style="display: none">-->
+<canvas id="snake-canvas">
+
+</canvas>
+    <button id="play-btn" onclick="run();">Play</button>
+    <button id="apple-btn" onclick="snake.randomApple();">New apple</button>
+    <button id="step-btn" onclick="game.step();">step</button>
+    <button onclick="game.settings.toggleView()">Test</button>
+</div>
+
+
+<script src="snake.js"></script>
+</body>
+</html>
+
+
