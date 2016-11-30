@@ -253,7 +253,7 @@ var Menu = function (id) {
 	this.node = document.getElementById(name);
 	this.hidden = false;
 	this.buttons = [];
-	var buttons = this.node.childNodes;
+	var buttons = document.getElementById('buttons').childNodes;
 	for(var i = 0; i < buttons.length; ++i) {
 		if(buttons[i].nodeType == Node.ELEMENT_NODE) {
 			this.buttons.push(buttons[i]);
@@ -349,7 +349,9 @@ function Game(snake, display) {
 	this.menu.enableContinue(false);
 	this.menu.node.style.width = display.width + "px";
 	this.menu.node.style.height = display.height * 2 + "px";
-	document.getElementById("snake-div").style.height = display.height + "px";
+	var snakeDiv = document.getElementById("snake-div");
+	snakeDiv.style.height = display.height + "px";
+	snakeDiv.style.width = display.width + "px";
 	this.menu.saveButton.parentNode.addEventListener("submit", function (event) {
 		for(var i = 0; i < event.target.length; ++i){
 			var field = event.target[i];

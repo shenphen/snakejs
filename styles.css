@@ -1,3 +1,25 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
 @keyframes hide {
    from {opacity: 1; display:block; z-index: 2}
     to  {opacity: 0; display: none; z-index: 0}
@@ -16,23 +38,29 @@
     to {top: 0}
 }
 
+body{
+	font-size: 16px;
+}
+
 a{
     text-decoration: none;
 }
 #snake-div {
-    position: absolute;
-    left: 35%;
-    top: 25%;
+	display: block;
+	position: relative;
     overflow: hidden;
+    margin: 50px auto 0;
 }
+
 
 #menu {
     position: absolute;
     display: block;
     width: auto;
     height: auto;
-    background-image: radial-gradient(ellipse 50% 50%, #1c22ff 0%, #1118b5 25%, rgba(17, 24, 181, 0.89) 75%, darkblue 100%);
+    /*background-image: radial-gradient(ellipse 50% 50%, #1c22ff 0%, #1118b5 25%, rgba(17, 24, 181, 0.89) 75%, darkblue 100%);*/
     z-index: 1;
+    background-color: #224CA1;
 }
 
 .hidden{
@@ -58,37 +86,40 @@ a{
     top: -100%;
     animation: slide_up 0.5s ease-in 1;
 }
-
-#menu > button {
-    position: relative;
-    border: dotted;
-    /*width: 12em;*/
+#buttons {
+	height: 50%;
+	padding-top: 8%;
+	box-sizing: border-box;
+}
+button {
+   
     width: 14em;
-    height: 5em;
+    height: 4em;
     text-align: center;
-    left: 30%; /* (100% - width) / 2 */
-    left: calc(50% - 7em);
-    background-image: linear-gradient(#fff, #000);
+    margin: 0 auto;
     user-select:none;
     -moz-user-select:none;
     -webkit-user-select:none;
     -ms-user-select:none;
+	background-color: #25A715;
+	border: solid 2px #184A12;
+	border-radius: 15px;
+	box-shadow: 0 2px #27791D;
 
 }
-#menu > button:first-child{
-    margin-top: 12px;
+#buttons > button:first-child{
 }
-#menu > button:nth-child(n+1){
+#buttons > button:nth-child(n+1){
     margin-bottom: 4px;
 }
 
 #settings {
     position: absolute;
     display: block;
-    width: auto;
-    height: auto;
-    margin-top: 6em;
-    /*background-color: rgba(174, 3, 0, 0.24);'*/
+    width: 100%;
+    height: 50%;
+    margin-left: 10px;
+    box-sizing: border-box;
     z-index: 0;
 /*radial-gradient(ellipse 50% 50%, #1c22ff 0%, #1118b5 25%, rgba(17, 24, 181, 0.89) 75%, darkblue 100%);*/
 }
@@ -104,3 +135,76 @@ a{
     padding: 0;
     text-shadow: rgba(120, 120, 119, 0.89) 0px 0px 1px;
 }
+
+input[type=submit] {
+	position: absolute;
+	bottom: 1em;
+	right: 2em;
+	width: 8em;
+	height: 3em;
+	border-radius: 5px;
+	background-color: #25A715;
+	border: solid 2px #184A12;
+	box-shadow: 0 2px #27791D;
+
+}
+
+input[type=checkbox].css-checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=checkbox].css-checkbox + label.css-label {
+							padding-left:41px;
+							height:36px; 
+							display:inline-block;
+							line-height:36px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size: 1rem;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=checkbox].css-checkbox:checked + label.css-label {
+							background-position: 0 -36px;
+						}
+						label.css-label {
+				background-image:url(img/checkbox.png);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+input[type=radio].css-radio {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=radio].css-radio + label.css-radio-label {
+							padding-left:41px;
+							height:36px; 
+							display:block;
+							line-height:36px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size: 1rem;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=radio].css-radio:checked + label.css-radio-label {
+							background-position: 0 -36px;
+						}
+						label.css-radio-label {
+				background-image:url(img/radio.png);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}

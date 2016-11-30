@@ -23,6 +23,6 @@ gulp.task('browserSync', function(){
 
 gulp.task('watch', ['browserSync', 'snake-js'], function(){
 	gulp.watch('snake.js', ['snake-js']);
-	gulp.watch('index.html', browserSync.reload);
+	gulp.watch(['index.html', 'styles.css'], browserSync.reload);
 })
 

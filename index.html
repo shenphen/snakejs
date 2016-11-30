@@ -6,20 +6,29 @@
     <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="snake-div" style="background-color: azure">
+<div id="snake-div">
     <div id="menu">
+        <div id="buttons">
         <button onclick="game.newGame();">New Game</button><br/>
         <button id="continue-btn" onclick="game.continue();">Continue</button><br/>
         <button onclick="slideDown();">Settings</button><br/>
         <button onclick="exit()">Exit</button><br/>
         <!--<a href="#" class="exit">&#x2715</a>-->
+        </div>
         <div id="settings">
             <form>
-                <input type="radio" name="difficulty" value=120 checked> Easy
-                <input type="radio" name="difficulty" value=80> Medium
-                <input type="radio" name="difficulty" value=60> Hard<br>
 
-                Going through walls?<input type="checkbox" name="walls" checked><br>
+                <input type="radio" class="css-radio" id="easy" name="difficulty" value=120 checked> 
+                <label for="easy" class="css-radio-label">Easy</label>
+                
+                <input type="radio" class="css-radio" id="medium" name="difficulty" value=80>
+                <label for="medium" class="css-radio-label">Medium</label>
+                <input type="radio" class="css-radio" id="hard" name="difficulty" value=60>
+                <label for="hard" class="css-radio-label">Hard</label><br>
+
+
+                <input type="checkbox" class="css-checkbox" id="walls" checked>
+                <label for="walls" class="css-label">Going through walls?</label><br>
                 <input type="submit" value="OK" id="save-settings">
 
 
