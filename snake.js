@@ -5,6 +5,7 @@ var COL_NUM = 30;
 var PIX_SIZE = 16;
 var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
 var APPLE_AMOUNT = 3, APPLE_LIMIT = 10;
+var BG_COLOR = [78, 96, 0]
 
 
 function componentToHex(c) {
@@ -331,10 +332,10 @@ function Game(snake, display) {
 
 	pic.src = "img/snake_grid_bg.png";
 	pic.addEventListener("load", function () {
+		console.log("load");
 		self.display.grid = pic;
 		self.display.cx.drawImage(self.display.grid, 2 * PIX_SIZE, 2 * PIX_SIZE, 1, 1, 0, 0, 1, 1); //Setting background from grid image
-		var color = self.display.cx.getImageData(0, 0, 1, 1).data;
-		self.display.bgColor = rgbToHex(color[0], color[1], color[2]);
+		self.display.bgColor = rgbToHex(BG_COLOR[0], BG_COLOR[1], BG_COLOR[2]);
 		self.display.firstDraw(self.snake);
 	}, false); //Synchronic
 

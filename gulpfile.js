@@ -12,13 +12,9 @@ gulp.task('snake-js', function(){
 })
 
 gulp.task('browserSync', function(){
-	browserSync({
-		server: {
-			baseDir:'./',
-		},
-		port: 6666
-
-	})
+	browserSync({server: true}, function(err, bs) {
+		console.log(bs.options.getIn(["urls", "local"]));
+	});
 })
 
 gulp.task('watch', ['browserSync', 'snake-js'], function(){
